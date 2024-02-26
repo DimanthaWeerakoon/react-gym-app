@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
+import channelTick from "../assets/icons/channelTick.png";
 
 const ExerciseVideos = ({ exerciseVideos, name }) => {
   return (
@@ -26,6 +27,20 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
             rel="noreferrer"
           >
             <img src={item.video.thumbnails[0].url} alt={item.video.title} />
+            <Box>
+              <Typography variant="h5" color="#000000">
+                {item.video.title}
+              </Typography>
+              <Typography variant="h6" color="#000000">
+                <img
+                  src={channelTick}
+                  width="15px"
+                  height="15px"
+                  alt="channel-tick"
+                />{" "}
+                {item.video.channelName}
+              </Typography>
+            </Box>
           </a>
         ))}
       </Stack>
