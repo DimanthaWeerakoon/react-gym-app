@@ -15,7 +15,11 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         exerciseOptions
       );
 
-      setBodyParts(["all", ...bodyPartsData]);
+      if (Array.isArray(bodyPartsData)) {
+        setBodyParts(["all", ...bodyPartsData]);
+      } else {
+        console.error("Body parts data is not an array:", bodyPartsData);
+      }
     };
 
     fetchExercisesData();
